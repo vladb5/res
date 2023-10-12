@@ -7,6 +7,7 @@ import {HOME_ROUTE} from "../utils/consts";
 
 const AppRouter = () => {
     const {user} = useContext(Context)
+
     return (
         <Routes>
             {user.isAuth && authRoutes.map(({path , element}) =>
@@ -15,7 +16,7 @@ const AppRouter = () => {
             {publicRoutes.map(({path, element}) =>
                 <Route key={path} path={path} element={element} exact/>
             )}
-            <Route path="*" elemnt={<Navigate to={HOME_ROUTE}/>}/>
+            <Route path="*" element={<Navigate to={HOME_ROUTE}/>}/>
         </Routes>
     );
 };
